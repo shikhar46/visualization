@@ -44,7 +44,8 @@ yale_dat %>%
 
 # What happens when a column name has spaces
 
-yale_dat %<>% 
+yale_dat <- 
+  yale_dat %>%
   mutate(`Men or Women` = Gender)
 
 yale_dat %>% 
