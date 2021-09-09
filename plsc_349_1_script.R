@@ -196,7 +196,7 @@ ggsave(
   units = "in"
 )
 
-# Barplot
+# Bar plot
 
 fig5 <-
   ggplot(d_gender_overtime, aes(Year, N, fill = Gender)) +
@@ -206,6 +206,17 @@ fig5 <-
   ylab("Student Count") +
   ggtitle("Bar Chart of Yale Students by Gender") +
   theme_bw()
+
+# What is stat = "identity"
+
+toy_data = tibble(
+  x = c(1,2,3,4,5,6,1),
+  y = c(1,4,5,3,5,2,10)
+)
+
+ggplot(toy_data, aes(x = x)) + geom_bar()
+
+ggplot(toy_data, aes(x = x, y=y)) + geom_bar(stat = "identity")
 
 # Facet Wrapping
 
