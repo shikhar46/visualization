@@ -11,7 +11,9 @@ Mondays and Wednesdays, 3:30 PM to 4:20 PM in Watson, Room A60
 
 #### Section: 
 Thursdays, 4PM: Watson A46
+
 Thursdays, 5PM: Watson B30
+
 Fridays, 11:35 AM: Watson A46
 
 Alert: Sections commence Thursday, September 9. 
