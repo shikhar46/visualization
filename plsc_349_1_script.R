@@ -215,8 +215,10 @@ toy_data = tibble(
 )
 
 ggplot(toy_data, aes(x = x)) + geom_bar()
+# geom_bar uses the frequency of a vector to make the bars
 
 ggplot(toy_data, aes(x = x, y=y)) + geom_bar(stat = "identity")
+# if you want geom_bar to use count data from another column, we do stat = "identity"
 
 # Facet Wrapping
 
