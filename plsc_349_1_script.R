@@ -1,6 +1,7 @@
 ####### Section 1: The Women's Table #########
 
-# Never save work space, always start an R session by clearing out any items in the global environment
+# Never save work space, always start an R session by clearing out 
+#any items in the global environment
 rm(list=ls())
 # Another way is to:
 # R Studio >> Preferences >> General >> Unselect certain automatic preferences
@@ -121,12 +122,16 @@ d_international_overtime <-
   pivot_wider(names_from = race,
               values_from = N)
 
+head(d_international_overtime)
+
 d_merged <-
   left_join(
     d_gender_overtime,
     d_international_overtime,
     by = "Year"
   )
+
+head(d_merged)
 
 # How do we go back to "long" format?
 
@@ -146,11 +151,12 @@ fig1 <-
   ggplot(d_gender_overtime, 
          aes(x = Year, 
              y = N, 
+             group = Gender,
              color = Gender
              )
          ) +
   geom_point() +
-  geom_line() +  # remove color=Gender and see how this changes
+  geom_line() +
   ylim(c(2500, 7500)) + # demonstrate how changing this changes the visualization
   xlab("Year") +
   ylab("Student Count") +
@@ -179,7 +185,7 @@ d_gender_overtime <-
 fig4 <-
   ggplot(d_gender_overtime, aes(x = Year, y = N, color = Gender)) +
   geom_point() +
-  geom_smooth(alpha = 0.1) + # explain alpha (0 = translucent, 1 = not translucent)
+  geom_smooth(alpha = 0.25) + # explain alpha (0 = translucent, 1 = not translucent)
   ylim(c(2500, 7500)) + # demonstrate how changing this changes the visualization
   scale_x_continuous(breaks = c(1980,1985,1990,1995,2000,2005,2010,2015,2020)) + # imp when year is numeric
   xlab("Year") +
